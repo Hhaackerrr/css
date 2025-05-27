@@ -1,1153 +1,443 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Banner Redesign</title>
-
-  <!-- AOS CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: "Segoe UI", sans-serif;
-    }
-    .mt-100 {
-        margin-top: 100px;
-    }
-
-    .banner-section {
-      position: relative;
-      height: 100vh;
-      background: url('https://myexpertdfw.com/wp-content/uploads/2021/10/slider-bg-home-water-rtestoration-1.jpg') no-repeat center center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-attachment: fixed;
-    }
-
-    .banner-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-    }
-    .banner-overlay-blr {
-    inset: 0;
-    background: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    border-radius: 30px;
-    padding-block: 1rem;
-    text-align: center;
-    -webkit-backdrop-filter: blur(10px);
-    transition: backdrop-filter 0.5s , box-shadow 0.3s;
-   
-    &:hover {
-     backdrop-filter: drop-shadow(20px 22px 22px #001);
-     filter: drop-shadow(2px 4px 5px #000);
-    box-shadow: 0px 0px 20px #fdfdfd;
-
-    }
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900");
+    #page-body .container {
+        width: 100% !important;
     }
     
-
-    .banner-content {
-      position: relative;
-      max-width: 800px;
-      margin-left: 5%;
-      color: #fff;
-      z-index: 2;
+    .container-max-md {
+        padding: 0 !important;
+        /* padding-left: 0 !important; padding-right: 0
+!important; */
     }
-
-    .banner-content h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
+    /* body { margin: 0; } */
+    
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        margin: 0;
     }
-
-    .banner-content p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-      line-height: 1.6;
-    }
-
-    .cert-image {
-      width: 100px;
-      margin: 20px 0;
-    }
-
-    .banner-btn {
-      display: inline-block;
-      padding: 12px 24px;
-      background: #e63946;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: back-ground 0.3s;
-    }
-
-    .banner-btn:hover {
-      background: #c62828;
-    }
-
-    @media (max-width: 768px) {
-      .banner-content h1 {
-        font-size: 2rem;
-      }
-
-      .banner-content {
-        margin-left: 10%;
-      }
-
-      .cert-image {
-        width: 80px;
-      }
-    }
-
-
-
-   
-
-
-    .mitigation-section {
-     background: #88a593;
-      padding: 80px 20px;
-    }
-
-    .mitigation-container {
-      display: flex;
-      /* align-items: center; */
-      justify-content: center;
-      background-color: #fff;
-      padding-block: 3rem;
-      max-width: 1000px;
-      margin: auto;
-      gap: 10px;
-      flex-wrap: wrap;
-      border-radius: 25px;
-      transition: 0.3s ease;
-    }
-    .mitigation-container:hover {
-        box-shadow: 0 0 20px #292828;
-    }
-    .iicrc-certified-img img{
-      transition: transform 0.5s ;
-
-    }
-   
-    .iicrc-certified-img:hover img {
-        transform: scale(1.2);
+    /* .main-div p, h1, h2, span { letter-spacing: initial !important; } */
+    .contentcontainer#di-page-composer {
+  padding: 0px;
+}
+    .main-div {
+        font-family: "Montserrat" !important;
     }
     
-
-    .mitigation-img img {
-      max-width: 500px;
-      width: 100%;
-
-      
-      /* border-radius: 10px; */
-      /* box-shadow: 0 8px 20px rgba(0,0,0,0.15); */
+    .main-div a {
+        text-decoration: underline;
     }
-
-    .mitigation-text {
-      flex: 1;
-      max-width: 550px;
+    
+    .services a {
+        text-decoration: underline !important;
     }
-
-    .mitigation-text h3 {
-      font-size: 1.3rem;
-      padding-bottom: 20px;
-      color: #333;
+    
+    .italic {
+        font-style: italic;
+        text-transform: initial;
     }
-
-    .mitigation-text p {
-      font-size: 1rem;
-      color: #444;
-      margin-bottom: 15px;
+    
+    .sns-f-27 {
+        font-size: 27px;
+        color: #fff;
+        font-family: "Montserrat" !important;
+        text-transform: capitalize;
     }
-
-    .mitigation-btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 24px;
-      color: #e63946;
-      border: 2px solid #e63946;
-      background: transparent;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-      border-radius: 6px;
-    }
-
-    .mitigation-btn:hover {
-      background: #e63946;
-      color: #fff;
-    }
-
-    @media (max-width: 768px) {
-      .mitigation-container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .mitigation-text {
-        max-width: 100%;
-      }
-
-      .mitigation-img img {
-        max-width: 100%;
-      }
-    }
-
-    .Resoration_all-Sec .about-section:nth-of-type(odd) .about-img img {
-  transition: transform 0.5s;
-}
- .Resoration_all-Sec .about-section:nth-of-type(odd) .about-img img:hover {
-  transform: translateX(-10px);
-}
-    .Resoration_all-Sec .about-section:nth-of-type(even) .about-img img {
-  transition: transform 0.5s;
-}
- .Resoration_all-Sec .about-section:nth-of-type(even) .about-img img:hover {
-  transform: translateX(10px);
-}
- .Resoration_all-Sec .about-section:nth-of-type(even) .about-label {
-  left: 40%;
-  text-align: center;
-}
-
-
-    .about-section {
-  background: #f6f6f6;
-  padding: 60px 20px;
-  box-shadow: 0 0 10px #767676;
-    border-radius: 25px;
-    margin-inline: 50px;
-}
-
-
-.about-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  max-width: 1100px;
-  margin: auto;
-  flex-wrap: wrap;
-  position: relative; /* needed for absolute positioning */
-}
-
-.about-img img {
- max-width: 300px;
-    height: 300px;
-    width: 100%;
-    border-radius: 8px;
-    object-fit: cover;
-}
-
-.about-text {
-  flex: 1;
-  min-width: 280px;
-  position: relative; /* required for absolute child */
-  padding-top: 70px; /* space for label */
-}
-
-.about-label {
-      position: absolute;
-    top: -15%;
-    left: 60%;
-    background: #88a593;
-    color: white;
-    padding: 50px 20px;
-    border-radius: 20px;
-    z-index: 1;
-    font-size: 0.9rem;
-    width: 30%;
-    text-align: center;
-    transform: translate(-50%, -50%);
-}
-
-.about-label h2 {
-  margin: 0;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-.about-label small {
-  display: block;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-  color: #cce6d4;
-}
-
-.about-text p {
-  font-size: 1.15rem;
-  color: #333;
-  line-height: 1.6;
-}
-.contact_yor_hme {
-    text-align: center;
-    max-width: 1000px;
-    margin-inline: auto;
-}
-.contact_yor_hme p {
-    padding-top: 20px;
-    line-height: 1.5em;
-}
-
-
-
-
-
-
-
-
- .testimonial-section {
-      background: url('https://myexpertdfw.com/wp-content/uploads/2021/10/testimonials-bg-2.jpg') no-repeat center center/cover;
-      position: relative;
-      padding: 80px 20px;
-      color: white;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    .testimonial-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(4px);
-      z-index: 1;
-    }
-
-    .testimonial-wrapper {
-      position: relative;
-      z-index: 2;
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    .testimonial-title {
-      font-size: 2.8rem;
-      margin-bottom: 40px;
-      animation: fadeInDown 1s ease forwards;
-    }
-
-    .testimonial-slider {
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.7s ease-in-out;
-    }
-
-    .slide {
-      display: none;
-      opacity: 0;
-      transform: scale(0.9);
-      transition: all 0.7s ease-in-out;
-    }
-
-    .slide.active {
-      display: block;
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    .slide blockquote {
-      font-size: 1.3rem;
-      font-style: italic;
-      animation: slideInUp 1s ease-out;
-      background: rgba(255,255,255,0.1);
-      border-left: 4px solid #ffcc70;
-      padding: 20px;
-      margin: 0 auto;
-      max-width: 800px;
-      border-radius: 10px;
-    }
-
-    .slide .avatar {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      margin: 20px auto 10px;
-      border: 2px solid #ffcc70;
-      object-fit: cover;
-    }
-
-    .slide cite {
-      display: block;
-      margin-top: 10px;
-      color: #ffcc70;
-      font-weight: bold;
-    }
-
-    .slide .stars {
-      color: #ffcc70;
-      margin-top: 10px;
-      font-size: 1.2rem;
-    }
-
-    .google-logo-container {
-      margin: 30px auto 10px;
-      text-align: center;
-    }
-
-    .google-logo-container img {
-      width: 120px;
-      height: auto;
-      cursor: pointer;
-      opacity: 0.8;
-      transition: opacity 0.3s ease, filter 0.3s ease;
-    }
-
-    .google-logo-container img:hover {
-      opacity: 1;
-      filter: brightness(1.2);
-    }
-
-    .nav-buttons {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .nav-buttons button {
-      background: #ffcc70;
-      border: none;
-      color: #000;
-      padding: 10px 20px;
-      font-size: 16px;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: back-ground 0.3s;
-    }
-
-    .nav-buttons button:hover {
-      background: #fff;
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes slideInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 768px) {
-      .testimonial-title {
-        font-size: 2.2rem;
-      }
-
-      .slide blockquote {
-        font-size: 1.1rem;
-        padding: 15px;
-      }
-
-      .google-logo-container img {
-        width: 100px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .testimonial-title {
-        font-size: 1.8rem;
-      }
-
-      .slide blockquote {
-        font-size: 1rem;
-        padding: 12px;
-      }
-
-      .nav-buttons button {
-        padding: 8px 16px;
-        font-size: 14px;
-      }
-
-      .google-logo-container img {
-        width: 90px;
-      }
-    }
-
-
-
-
-
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    /* Intro Section Styles */
-    .intro-section {
-      max-width: 1200px;
-      margin: 0 auto 60px;
-      text-align: center;
-    }
-    .intro-image img {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-    .intro-content {
-      margin-top: 20px;
-    }
-    .intro-content h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-    .intro-content p {
-      font-size: 1.1em;
-      color: #555;
-    }
-
-    /* Steps Section Styles */
-    .steps-section {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
-
-    .step {
-      background: #fff;
-      display: flex;
-      align-items: center;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    }
-
-    .step:nth-child(even) {
-      flex-direction: row-reverse;
-    }
-
-    .step-image {
-      flex: 1;
-    }
-
-    .step-image img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-
-    .step-content {
-      flex: 1;
-      padding: 30px;
-    }
-
-    .step-content h2 {
-      font-size: 1.8em;
-      margin-bottom: 10px;
-      color: #333;
-    }
-
-    .step-content p {
-      color: #555;
-    }
-
-    .step.text-only {
-      flex-direction: column;
-      text-align: left;
-    }
-
-    .step.text-only .step-content {
-      padding: 30px;
-    }
-
-    @media (max-width: 768px) {
-      .step {
-        flex-direction: column;
-      }
-
-      .step:nth-child(even) {
-        flex-direction: column;
-      }
-      .mt-50-mob {
-        margin-top: 50px;
-      }
-    }
-    @media screen and (max-width:960px) {
-        .about-section {
-            padding-top: 0;
-    padding-inline: 0;
+    
+    @media screen and (max-width: 890px) {
+        .sns-f-26 {
+            /* font-size: clamp(20px, 1.354vw, 24px) !important; */
         }
-         .about-label {
-            position: absolute;
-    width: 60%;
-    transform: unset;
-left: unset;   
-top: -6%;
-}
-
-    .about-img {
-        padding-top: 100px;
+        .sns-f-17 {
+            /* font-size: clamp(15px, 1.354vw, 17px) !important;; */
+        }
+    }
+    
+    .header-text {
+        background-color: #05154D;
+        text-align: center;
+        padding: 20px 0px;
+        margin-bottom: 30px;
+        margin-top: 15px;
+        width: 100%;
+        margin-inline: auto;
+    }
+    
+    .header-text h1 {
+        font-size: clamp(23px, 1.406vw, 30px);
+        text-transform: capitalize;
+        letter-spacing: 0px;
+        line-height: 30px;
+        color: #ffffff;
+        margin: 0px;
+        font-weight: 400;
+        font-family: "Montserrat" !important;
+    }
+    
+    @media screen and (max-width: 480px) {
+        .header-text h1 {
+            padding: 0 7px;
+            font-size: clamp(15px, 0.8vw, 27px);
+        }
+    }
+    
+    .banner {
+        background-image: url(https://di-uploads-pod47.dealerinspire.com/acuraoforangepark1/uploads/2025/03/banner-1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        /* max-width: 1440px; */
+        width: 95%;
+        margin: 0 auto;
+        height: 500px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .banner h1 {
+        color: #fff;
+        font-size: clamp(14px, 3.073vw, 50px);
+        letter-spacing: 1px;
+        margin-bottom: 0.5em;
+        text-transform: capitalize;
+        font-weight: 600;
+        font-family: "Montserrat" !important;
+    }
+    
+    .banner a {
+        background-color: #ffffff;
+        font-size: 20px;
+        letter-spacing: 0px;
+        color: #08164a;
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none !important;
+        padding: 7px 20px;
+        white-space: nowrap;
+    }
+    
+    @media screen and (max-width: 1280px) {
+        .banner {
+            height: calc(41vw + 0vh);
+        }
+    }
+    
+    @media screen and (max-width: 480px) {
+        .banner a {
+            font-size: 8px;
+            padding: 3px 3px;
+        }
+        .banner h1 {
+            font-size: clamp(10px, 3vw, 50px);
+        }
+    }
+    
+    @media (min-width: 475px) and (max-width: 800px) {
+        .banner a {
+            font-size: 9px;
+            padding: 7px 10px;
+        }
+    }
+    
+    .services-wrap .services-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 50px;
+        margin-inline: 2.5%;
+    }
+    
+    .services-wrap .services {
+        text-decoration-color: #000 !important;
+        flex: 0 0 auto;
+        width: 26%;
+        background-color: #ffffff;
+        border: 2px solid #e5e6eb;
+        padding: 30px;
+        text-align: center;
+        margin-top: 20px;
+        text-decoration: none;
+    }
+    
+    .services-wrap .services .services-img {
+        min-height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .services-wrap .services p {
+        color: #08164a;
+        font-weight: bold;
+        margin-bottom: 0px;
+        font-size: 23px;
+        text-transform: uppercase;
+    }
+    
+    @media screen and (max-width: 1110px) {
+        /* .services-wrap .services-row { justify-content: space-between; } .services-wrap .services { width: 26%; } */
+    }
+    
+    @media screen and (max-width: 866px) {
+        .services-wrap .services-row {
+            /* justify-content: space-between;
+*/
+            justify-content: center;
+            gap: 3%;
+        }
+        .services-wrap .services p {
+            font-size: 20px;
+        }
+        .services-wrap .services {
+            width: calc(97%/2);
+        }
+    }
+    
+    @media screen and (max-width: 640px) {
+        /* .services-wrap .services { width: 47%; padding: 5px; } */
+        .services-wrap .services {
+            width: 100%;
+        }
+        .services-wrap .services .services-img {
+            min-height: auto;
+        }
+        .services-wrap .services p {
+            font-size: 22px;
+        }
+        .services-wrap .services-row {
+            margin-top: 20px;
+        }
+    }
+    /* @media screen and (max-width: 480px) { .dealership-name h1
+{ font-size: 16px !important; } } */
+    
+    @media screen and (max-width: 866px) {
+        .dealership-name h1 {
+            font-size: 30px;
+        }
+    }
+    
+    @media screen and (max-width: 866px) {
+        .dealership-name h1 {
+            font-size: 28px;
+        }
+    }
+    
+    .dealership-name {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+    
+    .dealership-name h1 {
+        font-size: 33px;
+        letter-spacing: 0px;
+        color: #000000;
+        font-weight: 400;
+        text-align: center;
+        margin: 0px;
+        text-transform: capitalize;
+        padding-inline: 3%;
+        font-family: "Montserrat" !important;
+    }
+    
+    .main-text h2 {
+        font-size: 26px !important;
+    }
+    
+    .main-text p {
+        font-size: 17px !important;
+        font-weight: 400;
+    }
+    
+    .main-text {
+        background-color: #ffffff;
+        color: #000;
+        border: 1px solid #E9EAEE;
+        padding: 2.5%;
+        margin: 2.5%;
+    }
+    
+    .main-text .image {
+        overflow: hidden;
+    }
+    
+    .main-text .image img {
         width: 100%;
     }
-    .about-img img {
-        max-width: 100%;
-    height: unset;
-    /* width: 100%; */
-    border-radius: 8px;
-    /* object-fit: cover; */
-    padding: 20px;
-    /* margin-inline: auto; */
+    
+    .main-text h2 {
+        font-size: 26px !important;
+        font-weight: 500;
+        text-transform: initial;
+        color: #000;
+        margin-bottom: 0 !important;
+        margin-top: 1em;
+        font-family: "Montserrat" !important;
     }
-    .about-text {
+    
+    .main-text p {
+        font-size: 17px;
+        line-height: 1.37;
+        margin-top: 1rem;
+    }
+    
+    @media screen and (max-width: 866px) {
+        .main-text {
+            padding: 30px;
+        }
+        .main-text .image {
+            height: unset;
+        }
+    }
+    
+    @media screen and (max-width: 866px) {
+        .main-text {
+            padding: 20px;
+        }
+        .main-text .image img {
+            transform: unset;
+        }
+    }
+    
+    .call-us {
+        margin-top: 60px;
+        margin-bottom: 60px;
+        font-family: "Montserrat" !important;
+    }
+    
+    .call-us h1 {
+        font-size: 33px;
+        letter-spacing: 3px;
+        color: #000000;
+        font-weight: 400;
         text-align: center;
-        padding-inline: 25px;
-        padding-top: 0;
+        margin: 0px;
+        font-family: "Montserrat" !important;
     }
-    .wrap-reverse {
-        /* flex-wrap: wrap-reverse; */
-    }
-    .Resoration_all-Sec .about-section:nth-of-type(even) .about-label {
-        left: unset;
-    }
-    .contact_yor_hme {
-        padding-inline: 50px;
-        margin-top: 50px;
-    }
-    }
-    @media (max-width:768px) {
-        .about-section {
-            margin-inline: 10px;
-        }
-        .about-label {
-                position: initial;
-    width: 100%;
-    padding-block: 20px;
-    border-radius: 0;
-        }
-        .about-img {
-            padding-top: 0;
-        }
-    }
-
-
-
-  .stroked-button {
-  position: relative;
-  display: inline-block;
-  padding: 14px 36px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #fff;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  overflow: hidden;
-  margin-top: 30px;
-  text-decoration: none;
-  z-index: 0;
-  border-radius: 8px;
-}
-
-.stroked-button svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-.stroked-button rect {
-  fill: none;
-  stroke: #ffcc70;
-  stroke-width: 2;
-  stroke-dasharray: 400;
-  stroke-dashoffset: 400;
-  transition: stroke-dashoffset 0.6s ease, stroke-width 0.4s ease;
-  rx: 8;
-  ry: 8;
-}
-
-.stroked-clr{
-  color: #1c2a44 !important;
-
-  &:hover{
-    color: #1c2a44 !important;
-  }
-}
-
-.stroked-clr rect{
-   stroke: #1c2a44 !important;
-
-  &:hover{
-    stroke: #1c2a44 !important;
-  }
-}
-
-.stroked-clr:hover rect {
-  stroke-dashoffset: 1;
-  stroke-width: 3;
-}
-
-
-.stroked-button:hover rect {
-  stroke-dashoffset: 0;
-  stroke-width: 3;
-}
-
-.stroked-button:hover {
-  color: #ffcc70;
-}
-   
-
-  </style>
-</head>
-<body>
-
-  <!-- Banner Section -->
-  <section class="banner-section" id="banner">
-    <div class="banner-overlay"></div>
-    <div class="banner-overlay-blr">
-    <div class="banner-content" data-aos="fade-up">
-      <h1>Restoration</h1>
-      <p>Experiencing home water damage? Your Home Expert has on-call professionals to prevent further water damage and restore your home back to new. Contact us today!</p>
-    </div>
-    </div>
-  </section>
-
-  <!--Banner-Blw-sec-->
-
-  <section class="mitigation-section aos-init aos-animate" data-aos="zoom-in">
-    <div class="mitigation-container">
-      <div class="mitigation-img aos-init aos-animate iicrc-certified-img" data-aos="fade-right">
-        <img src="https://myexpertdfw.com/wp-content/uploads/2021/10/iicrc-certified.png" alt="Flooded Room" style="">
-      </div>
-      <div class="mitigation-text aos-init aos-animate mt-50-mob" data-aos="fade-left">
-        <h3>Certified Home Experts for Water Restoration</h3>
-        <p>
-          Your Home Expert is a licensed company, certified IICRC for water restoration. Handling 800 claims, we have the experience and knowledge to make a valid assessment of the damages of your home, make the necessary repairs and water restorations, and ensure the quality of work meets the set standards and expectations. We have specialized equipment and tools to handle any property damage claim. We also work with the insurance company to get your claim approved.
-
-
-        </p>
-       <div>
-      <a href="tel:469-777-8834" class="stroked-button stroked-clr">
-Call Your Home Expert Today!
-  <svg viewBox="0 0 180 50" preserveAspectRatio="none">
-    <rect x="1" y="1" width="178" height="48" />
-  </svg>
-</a>
-</div>
-      </div>
-    </div>
-  </section>
-
-<div class="Resoration_all-Sec">
-
-  <section class="about-section mt-100">
-  <div class="about-container" data-aos="fade-up">
-    <div class="about-label"> <!-- This is the green 'about me' tag -->
-        <!-- <small>design blog</small> -->
-        <h2>Plumbing and Leak Detection</h2>
-      </div>
-    <div class="about-img" data-aos="fade-right">
-      <img src="https://myexpertdfw.com/wp-content/uploads/2022/02/Plumbing-and-Leak-Detection.jpg" alt="Profile" />
-    </div>
-    <div class="about-text" data-aos="fade-left">
-      
-      <p>
-        Any leak or plumbing issue can lead to major problems to your home. Not only are your home and belongings affected by water, mold, and mildew, but your physical health and safety are also compromised. For these reasons, water damage requires an immediate course of action, and Your Home Expert is a reputable company to hire to identify a leak detection or plumbing problem and provide an effective solution in restoring your home back to its original state. Call Your home Expert!
-      </p>
-
-         <div>
-      <a href="tel:469-777-8834" class="stroked-button stroked-clr">
-Call Your Home Expert Today!
-  <svg viewBox="0 0 180 50" preserveAspectRatio="none">
-    <rect x="1" y="1" width="178" height="48" />
-  </svg>
-</a>
-</div>
-    </div>
-  </div>
-</section>
-
-
-<section class="about-section mt-100">
-  <div class="about-container wrap-reverse" data-aos="fade-up">
-    <div class="about-label"> <!-- This is the green 'about me' tag -->
-        <!-- <small>design blog</small> -->
-        <h2>Mitigation</h2>
-      </div>
     
-    <div class="about-text" data-aos="fade-left">
-      
-      <p>
-        Weather conditions such as storms, tornadoes, hail, and flash floods can cause severe damage to your home. That’s why it is important to turn to Your Home Expert to mitigate the water damage. We have experts to assess the problem, discuss the severity of the damage so you can make an informed decision in properly addressing the problem, make all necessary repairs and finally, restore your home back to working order. Our team of professionals are equipped with experience and resources to detect, evaluate, repair, and restore bringing your home back to a clean, dry, safe living environment. Call Your Home Expert!
-      </p>
-
-         <div>
-      <a href="tel:469-777-8834" class="stroked-button stroked-clr">
-Call Your Home Expert Today!
-  <svg viewBox="0 0 180 50" preserveAspectRatio="none">
-    <rect x="1" y="1" width="178" height="48" />
-  </svg>
-</a>
-</div>
-
-    </div>
-    <div class="about-img" data-aos="fade-right">
-      <img src="https://myexpertdfw.com/wp-content/uploads/2022/02/Mitigation.jpg" alt="Profile" />
-    </div>
-  </div>
-</section>
-
-
-
-<section class="about-section mt-100">
-  <div class="about-container" data-aos="fade-up">
-    <div class="about-label"> <!-- This is the green 'about me' tag -->
-        <!-- <small>design blog</small> -->
-        <h2>Mold Inspection / Assessment & Testing
-</h2>
-      </div>
-    <div class="about-img" data-aos="fade-right">
-      <img src="https://www.myexpertdfw.com/wp-content/uploads/2024/11/mold-inspection-1024x683-1.jpg" alt="Profile" />
-    </div>
-    <div class="about-text" data-aos="fade-left">
-      
-      <p>
-        At My Expert DFW, we recognize mold as both a health and structural concern. Our mold inspection, assessment, and testing services are designed to detect hidden mold growth, using advanced tools to measure air quality and identify mold types and concentrations. Our in-depth assessments provide a clear picture of affected areas and essential information for effective removal, helping you maintain a safe, mold-free environment. Trust My Expert DFW to protect your home and loved ones—schedule a professional mold inspection today for peace of mind and a healthier living space.
-      </p>
-
-         <div>
-      <a href="tel:469-777-8834" class="stroked-button stroked-clr">
-Call Your Home Expert Today!
-  <svg viewBox="0 0 180 50" preserveAspectRatio="none">
-    <rect x="1" y="1" width="178" height="48" />
-  </svg>
-</a>
-</div>
-
-    </div>
-  </div>
-</section>
-
-
-<section class="about-section mt-100">
-  <div class="about-container wrap-reverse" data-aos="fade-up">
-    <div class="about-label"> <!-- This is the green 'about me' tag -->
-        <!-- <small>design blog</small> -->
-        <h2>Mold removal / Remediation
-</h2>
-      </div>
+    .call-us h1 a {
+        display: block;
+        width: fit-content;
+        margin: auto;
+        color: #08164a;
+        text-decoration: none;
+        font-size: 75px;
+        letter-spacing: 0.4rem;
+        font-family: "Montserrat" !important;
+        font-weight: 400 !important;
+    }
     
-    <div class="about-text" data-aos="fade-left">
-      
-      <p>
-        Mold growth can be more than an inconvenience; it’s a health risk that affects your indoor environment. At My Expert DFW, our mold removal and remediation services are designed to tackle mold at its root. We start with a thorough inspection to identify and contain affected areas, preventing spores from spreading further. Using state-of-the-art equipment, we eliminate all traces of mold and treat surfaces to minimize the risk of regrowth. Our team’s goal is to restore your space, ensuring it’s safe, clean, and protected against future mold issues. Call Your Home Expert!
-      </p>
-
-         <div>
-      <a href="tel:469-777-8834" class="stroked-button stroked-clr">
-Call Your Home Expert Today!
-  <svg viewBox="0 0 180 50" preserveAspectRatio="none">
-    <rect x="1" y="1" width="178" height="48" />
-  </svg>
-</a>
-</div>
-
-
-    </div>
-    <div class="about-img" data-aos="fade-right">
-      <img src="https://www.myexpertdfw.com/wp-content/uploads/2024/11/95bef7c0-07a9-11eb-b9ad-21754bc2-1-2048x1366.jpg" alt="Profile" />
-    </div>
-  </div>
-</section>
-
-</div>
-
-
-
-<div class="contact_yor_hme mt-100" data-aos="zoom-in">
-    <h2>Contact Your Home Expert for an Emergency Situation
-</h2>
-<p>As a homeowner, it’s crucial to spot the signs of water damage or potential water damage. Water damage due to heavy storms, tornadoes, hail, flash floods, weakened roof, leaky or broken pipes, or overflowing appliances create an undesired and stressful emergency situation. Not only does it disrupt your life, but it also threatens the safety and health of your family and poses problems to the foundation of your property. The longer your property and possessions are left exposed to wet conditions, the more potential for deadly mold and mildew to grow which will lead to more hazardous conditions. Some water damage conditions such as toilet overflows and sewage backups create terrible odors. It’s important to immediately address the situation to reduce any further damages to your home and remedy the problem with effective water restoration solutions. We are available 24/7 to handle any emergency situation, provide free home water damage restoration estimates, are fully insured for your protection, work directly with all insurance companies and are licensed to work on any water damage restoration project.
-</p>
-</div>
-
-
-
-
-<!-- <div class="container">
-    Intro Section
-    <section class="intro-section">
-           <h2>What to do When Dealing with Water Damage
-</h2>
-      <div class="intro-image">
-        <img src="https://myexpertdfw.com/wp-content/uploads/2022/02/Dealing-with-Water-Damage.jpg" alt="Restoration Overview">
-      </div>
-      <div class="intro-content">
-     
-        <p>Are you experiencing a case of water damage in your home leaving you frustrated, scared, and overwhelmed? Are you wondering what immediate steps you need to take to confront your disaster claim? If you and your family are in an emergency situation due to water damage, you probably have a variety of questions such as:
-
-</p>
-<ul><li>What type of company can help me fix the damages of my home?
-</li>
-<li>Do I need to contact my insurance company?
-</li>
-<li>Will my insurance cover the expenses of my home damages?
-</li>
-<li>Should I keep written and/or photographical records of the damages?
-</li>
-<li>Who can help me repair and restore my home?
-</li></ul>
-
-<p>First, there are disaster relief or water restoration companies that provide emergency assistance helping you through every step of the process. They remove and clean up the damage, collect any evidence relevant to the situation at hand, work with your insurance company to get your claim approved and provide services in restoring your home back to normal.
-
-</p>
-
-<p>As you probably already know, there are specific steps of the process when dealing with any home disaster and with the insurance company, but you may not know what those steps are or in what order to approach the process. The following is a step-by-step process of what you should do for your disaster insurance claim.
-
-</p>
-      </div>
-    </section>
-
-    Steps Section
-    <section class="steps-section">
-
-         <div class="step text-only">
-        <div class="step-content">
-          <h2>Step 1: Act instead of reacting!
-</h2>
-          <p>It is important to stay calm and take immediate action with any emergency. The first and most important thing to do is to make sure that you and your family are safe. Find a safe location that will not put you and family in any physical danger or at health risk. Depending on the severity of the disaster, you should either go to a room or area that is away from the damages or leave your home.
-
-</p>
-<p>If a pipe burst and is flooding your home, you should turn off the water from either the source itself or from the main supply but only if it’s within your reach and will not put in danger. If you’re experiencing flooding in your home due to an overflowing river and you’re unable to leave your home, you should go to the top floor or on the roof and calmly wait for assistance.
-
-</p>
-
-<p>If you’re in danger, need medical assistance or a crime has been committed, you should call the police immediately. And remember, even though you’re probably experiencing a mixed of emotions, it is essential to not react resulting in poor judgement; instead, act on the problem that will get you and your family to safety, provide the assistance you need and resolve your situation.
-
-</p>
-        </div>
-      </div>
-
-
-
-      <div class="step">
-        <div class="step-image">
-          <img src="https://myexpertdfw.com/wp-content/uploads/2022/02/Evaluate-the-damages.jpg" alt="Step 1">
-        </div>
-        <div class="step-content">
-          <h2>Step 2: Evaluate the damages of your home.
-</h2>
-          <p>After you tend to the safety and well-being of your family, it is important to review the situation and assess the damages of your home. Safety should still be your main priority but if your home is safe enough to go back inside, then you need to think about what happened and find out what has been damaged. Although the disaster relief company and your insurance will conduct a complete assessment of the damages, any information you have will help you discuss the problem with the disaster relief company. Some questions that can guide you when assessing the problem are:
-
-</p>
-<ul>
-    <li>Where are the damages in my home?
-</li>
-    <li>What is the cause of the damages?
-</li>
-    <li>What specific areas of my home are damaged? Are there broken windows? Are there holes in the roof or in the walls, or cracks in the walls or ceiling?
-</li>
-</ul>
-<p>It would be a good idea to document your assessment of the damages of your home. You can also take pictures as substantial evidence. The disaster relief company will take multiple photographs of the damages but you providing written documentation and pictures of the damages can also help in demonstrating proof of disaster and having your claim approved.
-
-</p>
-
-<p>Another thing to keep in mind is to keep everything in its present condition for a thorough, proper assessment and documentation. In other words, do not clean up any messes. Your insurance company requires detailed documentation of the damages and the overall disaster and if you clean up without providing documentation as evidence of the disaster, your insurance company may deny your claim.
-
-</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-image">
-          <img src="https://via.placeholder.com/600x400?text=Step+2" alt="Step 2">
-        </div>
-        <div class="step-content">
-          <h2>Step 2: Water Removal</h2>
-          <p>We extract standing water using powerful pumps and vacuums.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-image">
-          <img src="https://via.placeholder.com/600x400?text=Step+3" alt="Step 3">
-        </div>
-        <div class="step-content">
-          <h2>Step 3: Drying</h2>
-          <p>We deploy industrial-grade dehumidifiers and air movers to dry the area.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-image">
-          <img src="https://via.placeholder.com/600x400?text=Step+4" alt="Step 4">
-        </div>
-        <div class="step-content">
-          <h2>Step 4: Cleaning</h2>
-          <p>We clean and sanitize all restorable items and structures.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-image">
-          <img src="https://via.placeholder.com/600x400?text=Step+5" alt="Step 5">
-        </div>
-        <div class="step-content">
-          <h2>Step 5: Mold Treatment</h2>
-          <p>Antimicrobial treatments are applied to prevent mold growth.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-image">
-          <img src="https://via.placeholder.com/600x400?text=Step+6" alt="Step 6">
-        </div>
-        <div class="step-content">
-          <h2>Step 6: Repair</h2>
-          <p>We repair and rebuild damaged structures to restore your space.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-image">
-          <img src="https://via.placeholder.com/600x400?text=Step+7" alt="Step 7">
-        </div>
-        <div class="step-content">
-          <h2>Step 7: Final Inspection</h2>
-          <p>We perform a final check to ensure all damage is addressed and your space is safe.</p>
-        </div>
-      </div>
-      <div class="step text-only">
-        <div class="step-content">
-          <h2>Step 8: Documentation</h2>
-          <p>We provide full documentation for insurance and future reference.</p>
-        </div>
-      </div>
-      <div class="step text-only">
-        <div class="step-content">
-          <h2>Step 9: Communication</h2>
-          <p>We keep you informed throughout the restoration process.</p>
-        </div>
-      </div>
-      <div class="step text-only">
-        <div class="step-content">
-          <h2>Step 10: Satisfaction Guarantee</h2>
-          <p>We ensure your complete satisfaction with our work and results.</p>
-        </div>
-      </div>
-    </section>
-  </div> -->
-
-
-
-  <section class="testimonial-section mt-100" data-aos="zoom-in">
-    <div class="testimonial-overlay"></div>
-    <div class="testimonial-wrapper">
-      <h2 class="testimonial-title">What Our Clients Say</h2>
-
-      <div class="testimonial-slider" id="slider">
-        <div class="slide active">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="avatar" class="avatar" />
-          <blockquote>
-         We had a great experience with Your Home Expert. They were professional, polite, and did beautiful work. Plus, Alex and Michael were complete pros and were fantastic at communicating with us. We will definitely work with them again!
-          </blockquote>
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <cite>Adam Jasienski</cite>
-        </div>
-
-        <div class="slide">
-          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="avatar" class="avatar" />
-          <blockquote>
-   Had a bad water leak on July 3rd. The result was work needed in two bathrooms and the downstairs ceiling above the kitchen. Called a couple of others, but decided to go with Alex and Your Home Experts. They were easy to communicate with, fought for us against the insurance company, and when work ultimately got started, they did a great job.
-They were thorough in protecting our home with plastic drapes and floor covering. They were timely, worked all day sans lunch, from 7-5. Cleaned up after themselves daily, and when the work was finished, and a cleaner came through to finish up.
-No complaints whatsoever. I’ve already recommended them to a friend for remodel work.
-          </blockquote>
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <cite>Chris Martin</cite>
-        </div>
-
-        <div class="slide">
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="avatar" class="avatar" />
-          <blockquote>
-           We approached YHE earlier this year when we were closing on a house. We had about 6 weeks before move in and it was a major project. For starters, 4 bathrooms, new floors, new fireplace, new stairs, new paint.
-
-I met with a few contractors but YHE was the only one that looked me in the eye and promised that they would get it done in time.
-
-The day the previous owners vacated the house, Alex and his team started demolition. We had nothing ordered or finalized for the house at that point. Alex explained that they usually don’t start a job with nothing ready to go so it would be a challenge, but doable.
-
-Over the next few weeks, we stayed in close contact with Alex and our project team, ordering things for the house and making decisions as reno was underway.
-
-We’re fortunate that YHE was willing and serious about helping us meet our goal. As promised, the house was ready for move in by the date promised.
-
-I will say that not everything went smoothly. I assume that’s typical of any reno, but the most important thing is that Alex cares about customer satisfaction above all else and he will not stop working with you until you’re happy. For me, that’s a sign of good, responsible management and it’s why I would trust YHE again with any future projects.
-
-We also worked with Miki on window treatments and he was very professional as well.
-          </blockquote>
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <cite>Deb C.</cite>
-        </div>
-      </div>
-
-<div>
-      <a href="https://www.google.com/search?hl=en&source=hp&ei=R2ZIXfqIFYaOsQWdsrC4CA&q=your+home+expert&oq=your+home+expert&gs_l=psy-ab.3..0j0i22i30l4j38.3704.10891..11371...1.0..1.1173.2990.16j1j6-1j1......0....1..gws-wiz.....0..0i131j0i10j0i10i3j0i22i10i30.5avV8yc5DRo&ved=0ahUKEwi6yJjVn-zjAhUGR6wKHR0ZDIcQ4dUDCAc&uact=5#lrd=0x864c23a49ca7ca13:0x810ff60db8adb868,1,,," class="stroked-button">
-VIEW MORE
-  <svg viewBox="0 0 180 50" preserveAspectRatio="none">
-    <rect x="1" y="1" width="178" height="48" />
-  </svg>
-</a>
-</div>
-
-      <div class="google-logo-container">
-        <a href="https://www.google.com" target="_blank" aria-label="Google">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" />
-        </a>
-      </div>
-
-      <div class="nav-buttons">
-        <button onclick="prevSlide()">&#10094; Prev</button>
-        <button onclick="nextSlide()">Next &#10095;</button>
-      </div>
-    </div>
-  </section>
-
-
-
-  <!-- AOS JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1200 });
-
-
-    let index = 0;
-    const slides = document.querySelectorAll(".slide");
-
-    function showSlide(i) {
-      slides.forEach((slide, idx) => {
-        slide.classList.remove("active");
-        if (i === idx) {
-          slide.classList.add("active");
+    .call-us h1 a {
+        text-decoration: none !important;
+        border-bottom: 0.3vw solid;
+        font-family: "Montserrat" !important;
+    }
+    
+    @media screen and (max-width: 1110px) {
+        .call-us h1 a {
+            border-bottom: 0.7vw solid !important;
         }
-      });
     }
-
-    function nextSlide() {
-      index = (index + 1) % slides.length;
-      showSlide(index);
+    
+    @media screen and (max-width: 350px) {
+        .call-us h1 {
+            font-size: 20px !important;
+        }
+        .call-us h1 a {
+            font-size: 25px !important;
+        }
     }
-
-    function prevSlide() {
-      index = (index - 1 + slides.length) % slides.length;
-      showSlide(index);
+    
+    @media screen and (max-width: 800px) {
+        .call-us h1 {
+            font-size: 25px;
+        }
+        .call-us h1 a {
+            font-size: 45px;
+        }
     }
-
-    showSlide(index);
-  </script>
-</body>
-</html>
+    
+    .info {
+        display: flex;
+        margin-bottom: 50px;
+        border: 2px solid #e5e6eb;
+        margin-inline: 2.5%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .hours-wrap {
+        width: 50%;
+        color: #000;
+        background-color: #ffffff;
+    }
+    
+    .hours-wrap .hours {
+        margin-top: auto;
+        display: block;
+        /* top: 50%; */
+        /* position: relative; */
+        /* transform: translate(0px, -50%); */
+        padding-left: 50px;
+    }
+    
+    .hours-wrap .hours .sales-hours {
+      padding-block: 3%;
+        color: #08164a;
+        font-size: 25px;
+        margin-top: 0px;
+        font-weight: 400;
+    }
+    
+    .map-wrap {
+        width: 50%;
+        line-height: 0;
+    }
+    
+    .mapouter {
+        position: relative;
+        text-align: right;
+    }
+    
+    .mapouter iframe {
+        width: 100%;
+    }
+    
+    .hours table tbody tr td {
+        width: 50%;
+    }
+    
+    @media screen and (max-width: 866px) {
+        .hours-wrap .hours {
+            padding-left: 3%;
+        }
+        /* .map-wrap { width: 100%; } */
+    }
+    
+    @media screen and (max-width: 866px) {}
+    
+    @media screen and (max-width: 640px) {
+        .hours-wrap .hours {
+            margin-top: auto;
+            display: block;
+            transform: none;
+            padding-left: 3%;
+            padding-right: 3%;
+            padding-block: 2rem;
+        }
+        .map-wrap {
+            width: 100%;
+        }
+        .hours-wrap {
+            width: 100%;
+            color: #000;
+            background-color: #ffffff;
+        }
+        .info {
+            flex-direction: column;
+        }
+    }
+</style>
